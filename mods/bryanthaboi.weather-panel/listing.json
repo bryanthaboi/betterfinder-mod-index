@@ -1,0 +1,60 @@
+{
+  "api" : ">=1.0.0 <2.0.0",
+  "app" : ">=1.0.0 <2.0.0",
+  "author" : "bryanthaboi",
+  "categories" : [
+    "UI",
+    "WORKFLOW",
+    "AUTOMATION"
+  ],
+  "id" : "bryanthaboi.weather-panel",
+  "permissions" : [
+    {
+      "endpoints" : [
+        {
+          "host" : "geocoding-api.open-meteo.com",
+          "methods" : [
+            "GET"
+          ],
+          "scheme" : "https"
+        },
+        {
+          "host" : "api.open-meteo.com",
+          "methods" : [
+            "GET"
+          ],
+          "scheme" : "https"
+        }
+      ],
+      "kind" : "net",
+      "maxBytes" : 65536,
+      "reason" : "Look up your city and its current weather on open-meteo.com. Nothing else is contacted and nothing about your files is sent."
+    },
+    {
+      "kind" : "ui",
+      "surfaces" : [
+        "panel",
+        "toolbar"
+      ]
+    }
+  ],
+  "release" : {
+    "assetURL" : "https://github.com/bryanthaboi/betterfinder-mod-weather-panel/releases/download/v1.0.0/weather-panel.bfmod",
+    "bytes" : 9190,
+    "commit" : "2e35d490a568515fe611b28b6a9c8799407f8574",
+    "keyId" : "bryanthaboi:2026-11",
+    "sha256" : "c2a99dbad8720899481d274b7623ddc0be82392f9cbc7c16198b1d5503c3cddb",
+    "signature" : "bNcnW+Y8ydAydUpTgt0rque+8nzEspzp9fNib63ThdbP7br+pJxK1jOT7biU53E9p0/OnvxI/T3wOTEhntllAA==",
+    "tag" : "v1.0.0"
+  },
+  "repo" : "https://github.com/bryanthaboi/betterfinder-mod-weather-panel",
+  "schemaVersion" : 1,
+  "summary" : "slide-out panel with the current weather and a 3 day forecast for the city u pick",
+  "tags" : [
+    "weather",
+    "panel",
+    "silly"
+  ],
+  "title" : "Weather Panel",
+  "version" : "1.0.0"
+}

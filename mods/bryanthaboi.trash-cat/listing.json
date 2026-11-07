@@ -1,0 +1,49 @@
+{
+  "api" : ">=1.0.0 <2.0.0",
+  "app" : ">=1.0.0 <2.0.0",
+  "author" : "bryanthaboi",
+  "categories" : [
+    "UI",
+    "WORKFLOW",
+    "FILESYSTEM"
+  ],
+  "id" : "bryanthaboi.trash-cat",
+  "permissions" : [
+    {
+      "kind" : "operations.observe",
+      "operations" : [
+        "trash"
+      ],
+      "reason" : "Notice when you trash something so the cat can eat it"
+    },
+    {
+      "kind" : "storage",
+      "quotaBytes" : 1024
+    },
+    {
+      "kind" : "ui",
+      "surfaces" : [
+        "statusBar"
+      ]
+    }
+  ],
+  "release" : {
+    "assetURL" : "https://github.com/bryanthaboi/betterfinder-mod-trash-cat/releases/download/v1.0.0/trash-cat.bfmod",
+    "bytes" : 5399,
+    "commit" : "a31908a11f94734c28b840507141aad9cf4b7980",
+    "keyId" : "bryanthaboi:2026-11",
+    "sha256" : "eca77c23716781c59bf653da9f38c22249ef74f3c445b4c3adc05feb2855a648",
+    "signature" : "bvbaWyTaSnMRWBVX8A19Y6kepYkUO142kvcA3Y6hD13G0Sp7ze9WXE+WuvGQ5kULWona4222fRr3u5n3Oxb5Ag==",
+    "tag" : "v1.0.0"
+  },
+  "repo" : "https://github.com/bryanthaboi/betterfinder-mod-trash-cat",
+  "schemaVersion" : 1,
+  "summary" : "a status bar cat that noms whatever u trash and keeps score",
+  "tags" : [
+    "cat",
+    "status-bar",
+    "silly"
+  ],
+  "title" : "Trash Cat",
+  "version" : "1.0.0"
+}

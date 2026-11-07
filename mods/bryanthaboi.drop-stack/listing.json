@@ -1,0 +1,54 @@
+{
+  "api" : ">=1.0.0 <2.0.0",
+  "app" : ">=1.0.0 <2.0.0",
+  "author" : "bryanthaboi",
+  "categories" : [
+    "UI",
+    "WORKFLOW",
+    "FILESYSTEM"
+  ],
+  "id" : "bryanthaboi.drop-stack",
+  "permissions" : [
+    {
+      "kind" : "fs.read",
+      "reason" : "Hold on to the files you stash so they can be copied or moved later",
+      "scope" : "selection"
+    },
+    {
+      "kind" : "fs.write",
+      "reason" : "Copy or move the stack into the folder you are in, or one you pick",
+      "scope" : "destination"
+    },
+    {
+      "kind" : "storage",
+      "quotaBytes" : 262144
+    },
+    {
+      "kind" : "ui",
+      "surfaces" : [
+        "panel",
+        "contextMenu",
+        "toolbar"
+      ]
+    }
+  ],
+  "release" : {
+    "assetURL" : "https://github.com/bryanthaboi/betterfinder-mod-drop-stack/releases/download/v1.1.0/drop-stack.bfmod",
+    "bytes" : 8477,
+    "commit" : "bc18cb2652df82b53db2323a913c1aba88c42d29",
+    "keyId" : "bryanthaboi:2026-11",
+    "sha256" : "8cebc82d65ea7a50475005cfbb75454854453037e6160a4cd06c09c0dff145e8",
+    "signature" : "QvwylSgJsYyktK6LLPNQzbzk2VD/32bnpM5eDnBOeLExHYhokPkGRkRAlsSQDNLIXb59uzig/fYa1FqkxN+GBA==",
+    "tag" : "v1.1.0"
+  },
+  "repo" : "https://github.com/bryanthaboi/betterfinder-mod-drop-stack",
+  "schemaVersion" : 1,
+  "summary" : "path finder style drop stack: stash files, then copy or move the pile in one go",
+  "tags" : [
+    "drop-stack",
+    "shelf",
+    "copy"
+  ],
+  "title" : "Drop Stack",
+  "version" : "1.1.0"
+}
