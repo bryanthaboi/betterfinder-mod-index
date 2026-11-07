@@ -1,0 +1,59 @@
+name: validate
+on:
+  pull_request_target:
+    branches: [main]
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  validate:
+    runs-on: [self-hosted, macOS, betterfinder-index]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: trusted-index
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: submission
+          persist-credentials: false
+      - name: require pinned validator source
+        env:
+          VALIDATOR_REF: ${{ vars.BETTERFINDER_VALIDATOR_REF }}
+        run: '[[ "$VALIDATOR_REF" =~ ^[0-9a-f]{40}$ ]]'
+      - uses: actions/checkout@v4
+        with:
+          repository: bryanthaboi/betterfinder
+          ref: ${{ vars.BETTERFINDER_VALIDATOR_REF }}
+          ssh-key: ${{ secrets.BETTERFINDER_DEPLOY_KEY }}
+          path: betterfinder
+          persist-credentials: false
+      - name: build trusted tools
+        run: |
+          swift build -c release --package-path betterfinder/Packages/ModValidation --product betterfinder-mod
+          swift build -c release --package-path betterfinder/Packages/ModIndex --product mod-index-tool
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const files = await github.paginate(github.rest.pulls.listFiles, {...context.repo, pull_number: context.issue.number});
+            fs.writeFileSync('changed.txt', files.filter(f => f.status !== 'removed').map(f => f.filename).join('\n'));
+      - name: validate changed release artifacts
+        id: validate
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          betterfinder/Packages/ModIndex/.build/release/mod-index-tool validate-artifacts "$PWD/submission" "$PWD/betterfinder/Packages/ModValidation/.build/release/betterfinder-mod" "$PWD/changed.txt" 2>&1 | tee report.txt
+      - uses: actions/github-script@v7
+        if: always()
+        env:
+          RESULT: ${{ steps.validate.outcome }}
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.existsSync('report.txt') ? fs.readFileSync('report.txt', 'utf8').slice(-50000) : 'tool build or setup failed';
+            await github.rest.issues.createComment({...context.repo, issue_number: context.issue.number, body: `index validation: ${process.env.RESULT || 'failed'}\n\n<details><summary>report</summary>\n\n<pre>${report.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</pre>\n</details>`});
+      - if: steps.validate.outcome != 'success'
+        run: exit 1

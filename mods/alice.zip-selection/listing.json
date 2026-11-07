@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "alice.zip-selection",
+  "title": "Zip Selection",
+  "author": "alice",
+  "version": "1.0.0",
+  "api": ">=1.0.0 <2.0.0",
+  "app": ">=1.0.0 <2.0.0",
+  "categories": [
+    "AUTOMATION"
+  ],
+  "repo": "https://github.com/alice/betterfinder-zip-selection",
+  "release": {
+    "tag": "v1.0.0",
+    "commit": "0123456789abcdef0123456789abcdef01234567",
+    "assetURL": "https://github.com/alice/betterfinder-zip-selection/releases/download/v1.0.0/zip-selection.bfmod",
+    "bytes": 4096,
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "keyId": "alice:2026-01",
+    "signature": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+  },
+  "permissions": [
+    {
+      "kind": "fs.read",
+      "scope": "selection",
+      "recursive": true,
+      "reason": "Read the items you select to archive them"
+    },
+    {
+      "kind": "fs.write",
+      "scope": "destination",
+      "reason": "Write the archive into the folder you choose"
+    },
+    {
+      "kind": "process.exec",
+      "mode": "broker",
+      "operations": [
+        "archive.create"
+      ],
+      "reason": "Create the archive with the built-in archiver"
+    },
+    {
+      "kind": "ui",
+      "surfaces": [
+        "toolbar"
+      ]
+    }
+  ],
+  "summary": "Example only. Placeholder release; do not install.",
+  "tags": [
+    "example"
+  ]
+}

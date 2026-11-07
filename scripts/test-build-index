@@ -1,0 +1,17 @@
+#!/bin/sh
+set -eu
+root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+scratch=$(mktemp -d)
+trap 'rm -rf "$scratch"' EXIT
+export INDEX_SIGNING_KEY="$scratch/signing.key"
+export INDEX_GENERATED_AT=2026-11-06T00:00:00Z
+export INDEX_SERIAL=1
+"$root/scripts/generate-key"
+cp "$root/index.json" "$scratch/original.json"
+cp "$root/index.json.sig" "$scratch/original.sig"
+trap 'cp "$scratch/original.json" "$root/index.json"; cp "$scratch/original.sig" "$root/index.json.sig"; rm -rf "$scratch"' EXIT
+"$root/scripts/build-index"
+cp "$root/index.json" "$scratch/first.json"
+"$root/scripts/build-index"
+cmp "$scratch/first.json" "$root/index.json"
+printf '%s\n' 'deterministic feed passed'

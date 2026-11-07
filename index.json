@@ -1,0 +1,235 @@
+{
+  "apiVersions" : [
+    "1.0.0"
+  ],
+  "expiresAt" : "2026-11-14T00:42:10Z",
+  "generatedAt" : "2026-11-07T00:42:10Z",
+  "mods" : [
+    {
+      "listing" : {
+        "api" : ">=1.0.0 <2.0.0",
+        "app" : ">=1.0.0 <2.0.0",
+        "author" : "alice",
+        "categories" : [
+          "AUTOMATION"
+        ],
+        "id" : "alice.image-dimensions",
+        "permissions" : [
+          {
+            "kind" : "fs.read",
+            "reason" : "Read selected image headers",
+            "recursive" : false,
+            "scope" : "selection"
+          },
+          {
+            "kind" : "ui",
+            "surfaces" : [
+              "column"
+            ]
+          }
+        ],
+        "release" : {
+          "assetURL" : "https://github.com/alice/betterfinder-image-dimensions/releases/download/v1.0.0/image-dimensions.bfmod",
+          "bytes" : 4096,
+          "commit" : "0123456789abcdef0123456789abcdef01234567",
+          "keyId" : "alice:2026-01",
+          "sha256" : "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "signature" : "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+          "tag" : "v1.0.0"
+        },
+        "repo" : "https://github.com/alice/betterfinder-image-dimensions",
+        "schemaVersion" : 1,
+        "summary" : "Example only. Placeholder release; do not install.",
+        "tags" : [
+          "example"
+        ],
+        "title" : "Image Dimensions",
+        "version" : "1.0.0"
+      },
+      "sha256" : "4f7a677e6a6a73550a4551df1e1433630d7b06d37ed19b23c30d7984524e4759"
+    },
+    {
+      "listing" : {
+        "api" : ">=1.0.0 <2.0.0",
+        "app" : ">=1.0.0 <2.0.0",
+        "author" : "alice",
+        "categories" : [
+          "AUTOMATION"
+        ],
+        "id" : "alice.markdown-previewer",
+        "permissions" : [
+          {
+            "kind" : "fs.read",
+            "reason" : "Read the Markdown file being previewed",
+            "recursive" : false,
+            "scope" : "selection"
+          },
+          {
+            "kind" : "ui",
+            "surfaces" : [
+              "preview"
+            ]
+          }
+        ],
+        "release" : {
+          "assetURL" : "https://github.com/alice/betterfinder-markdown-previewer/releases/download/v1.0.0/markdown-previewer.bfmod",
+          "bytes" : 4096,
+          "commit" : "0123456789abcdef0123456789abcdef01234567",
+          "keyId" : "alice:2026-01",
+          "sha256" : "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "signature" : "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+          "tag" : "v1.0.0"
+        },
+        "repo" : "https://github.com/alice/betterfinder-markdown-previewer",
+        "schemaVersion" : 1,
+        "summary" : "Example only. Placeholder release; do not install.",
+        "tags" : [
+          "example"
+        ],
+        "title" : "Markdown Previewer",
+        "version" : "1.0.0"
+      },
+      "sha256" : "9044220710e9f090f3679c45b53f84b6b0c02555e255860dedbdd43e26bc9ad8"
+    },
+    {
+      "listing" : {
+        "api" : ">=1.0.0 <2.0.0",
+        "app" : ">=1.0.0 <2.0.0",
+        "author" : "alice",
+        "categories" : [
+          "AUTOMATION"
+        ],
+        "id" : "alice.pinned-folders",
+        "permissions" : [
+          {
+            "kind" : "ui",
+            "surfaces" : [
+              "sidebar"
+            ]
+          }
+        ],
+        "release" : {
+          "assetURL" : "https://github.com/alice/betterfinder-pinned-folders/releases/download/v1.0.0/pinned-folders.bfmod",
+          "bytes" : 4096,
+          "commit" : "0123456789abcdef0123456789abcdef01234567",
+          "keyId" : "alice:2026-01",
+          "sha256" : "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "signature" : "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+          "tag" : "v1.0.0"
+        },
+        "repo" : "https://github.com/alice/betterfinder-pinned-folders",
+        "schemaVersion" : 1,
+        "summary" : "Example only. Placeholder release; do not install.",
+        "tags" : [
+          "example"
+        ],
+        "title" : "Pinned Folders",
+        "version" : "1.0.0"
+      },
+      "sha256" : "79d96f9c4b1b6f9ddb67fced6b29834dd75aca1d69089af1c402aadeeb20c3b1"
+    },
+    {
+      "listing" : {
+        "api" : ">=1.0.0 <2.0.0",
+        "app" : ">=1.0.0 <2.0.0",
+        "author" : "alice",
+        "categories" : [
+          "AUTOMATION"
+        ],
+        "id" : "alice.recent-downloads",
+        "permissions" : [
+          {
+            "kind" : "fs.read",
+            "reason" : "List the Downloads folder you choose",
+            "recursive" : false,
+            "rootId" : "downloads",
+            "scope" : "root"
+          },
+          {
+            "kind" : "ui",
+            "surfaces" : [
+              "sidebar",
+              "location"
+            ]
+          }
+        ],
+        "release" : {
+          "assetURL" : "https://github.com/alice/betterfinder-recent-downloads/releases/download/v1.0.0/recent-downloads.bfmod",
+          "bytes" : 4096,
+          "commit" : "0123456789abcdef0123456789abcdef01234567",
+          "keyId" : "alice:2026-01",
+          "sha256" : "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "signature" : "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+          "tag" : "v1.0.0"
+        },
+        "repo" : "https://github.com/alice/betterfinder-recent-downloads",
+        "schemaVersion" : 1,
+        "summary" : "Example only. Placeholder release; do not install.",
+        "tags" : [
+          "example"
+        ],
+        "title" : "Recent Downloads",
+        "version" : "1.0.0"
+      },
+      "sha256" : "8cdd05836e68b18aac5999b3e4dd763d57634d83ed47a439d2bdd380acc09e4a"
+    },
+    {
+      "listing" : {
+        "api" : ">=1.0.0 <2.0.0",
+        "app" : ">=1.0.0 <2.0.0",
+        "author" : "alice",
+        "categories" : [
+          "AUTOMATION"
+        ],
+        "id" : "alice.zip-selection",
+        "permissions" : [
+          {
+            "kind" : "fs.read",
+            "reason" : "Read the items you select to archive them",
+            "recursive" : true,
+            "scope" : "selection"
+          },
+          {
+            "kind" : "fs.write",
+            "reason" : "Write the archive into the folder you choose",
+            "scope" : "destination"
+          },
+          {
+            "kind" : "process.exec",
+            "mode" : "broker",
+            "operations" : [
+              "archive.create"
+            ],
+            "reason" : "Create the archive with the built-in archiver"
+          },
+          {
+            "kind" : "ui",
+            "surfaces" : [
+              "toolbar"
+            ]
+          }
+        ],
+        "release" : {
+          "assetURL" : "https://github.com/alice/betterfinder-zip-selection/releases/download/v1.0.0/zip-selection.bfmod",
+          "bytes" : 4096,
+          "commit" : "0123456789abcdef0123456789abcdef01234567",
+          "keyId" : "alice:2026-01",
+          "sha256" : "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "signature" : "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+          "tag" : "v1.0.0"
+        },
+        "repo" : "https://github.com/alice/betterfinder-zip-selection",
+        "schemaVersion" : 1,
+        "summary" : "Example only. Placeholder release; do not install.",
+        "tags" : [
+          "example"
+        ],
+        "title" : "Zip Selection",
+        "version" : "1.0.0"
+      },
+      "sha256" : "3119526745d61391dc2a23dd66c65eb6b3e7b796f505509f2cc4d475cab1d9e6"
+    }
+  ],
+  "schemaVersion" : 1,
+  "serial" : 1794012130
+}

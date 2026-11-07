@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+source=${BETTERFINDER_SOURCE:-"$root/../betterfinder"}
+exec swift run --package-path "$source/Packages/ModIndex" mod-index-tool build "$root" "${INDEX_SIGNING_KEY:-$HOME/.config/betterfinder-index/signing.key}" "${INDEX_GENERATED_AT:?set INDEX_GENERATED_AT to an ISO8601 UTC timestamp}" "${INDEX_SERIAL:?set INDEX_SERIAL to a monotonically increasing integer}"

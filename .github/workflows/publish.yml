@@ -1,0 +1,75 @@
+name: publish
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish-index
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: [self-hosted, macOS, betterfinder-index]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: require pinned source
+        env:
+          VALIDATOR_REF: ${{ vars.BETTERFINDER_VALIDATOR_REF }}
+        run: '[[ "$VALIDATOR_REF" =~ ^[0-9a-f]{40}$ ]]'
+      - uses: actions/checkout@v4
+        with:
+          repository: bryanthaboi/betterfinder
+          ref: ${{ vars.BETTERFINDER_VALIDATOR_REF }}
+          ssh-key: ${{ secrets.BETTERFINDER_DEPLOY_KEY }}
+          path: betterfinder
+          persist-credentials: false
+      - name: build feed with ephemeral key
+        env:
+          INDEX_SIGNING_KEY: ${{ runner.temp }}/signing.key
+          BETTERFINDER_SOURCE: ${{ github.workspace }}/betterfinder
+        run: |
+          scripts/generate-key
+          INDEX_GENERATED_AT=$(date -u +%Y-%m-%dT%H:%M:%SZ) INDEX_SERIAL=$(date +%s) scripts/build-index
+          rm "$INDEX_SIGNING_KEY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: unsigned-index
+          path: index.json
+  sign:
+    needs: build
+    environment: index-signing
+    runs-on: [self-hosted, macOS, betterfinder-index]
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: unsigned-index
+          path: ${{ runner.temp }}/betterfinder-index-publish
+      - name: sign feed
+        env:
+          OUTPUT: ${{ runner.temp }}/betterfinder-index-publish
+        run: |
+          cat > "$RUNNER_TEMP/sign-index.swift" <<'SWIFT'
+          import Foundation
+          import CryptoKit
+          let keyURL = URL(fileURLWithPath: NSHomeDirectory() + "/.config/betterfinder-index/signing.key")
+          let attrs = try FileManager.default.attributesOfItem(atPath: keyURL.path)
+          guard (attrs[.posixPermissions] as? NSNumber)?.intValue == 0o600 else { fatalError("key must be 0600") }
+          let key = try Curve25519.Signing.PrivateKey(rawRepresentation: Data(contentsOf: keyURL))
+          let root = URL(fileURLWithPath: ProcessInfo.processInfo.environment["OUTPUT"]!)
+          let data = try Data(contentsOf: root.appendingPathComponent("index.json"))
+          try key.signature(for: data).write(to: root.appendingPathComponent("index.json.sig"), options: .atomic)
+          SWIFT
+          swift "$RUNNER_TEMP/sign-index.swift"
+      - name: publish release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          OUTPUT: ${{ runner.temp }}/betterfinder-index-publish
+          RELEASE_TAG: index-${{ github.run_id }}-${{ github.run_attempt }}
+          TARGET_SHA: ${{ github.sha }}
+        run: gh release create "$RELEASE_TAG" "$OUTPUT/index.json" "$OUTPUT/index.json.sig" --target "$TARGET_SHA" --title "$RELEASE_TAG" --latest

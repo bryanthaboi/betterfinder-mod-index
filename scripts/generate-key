@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+source=${BETTERFINDER_SOURCE:-"$root/../betterfinder"}
+exec swift run --package-path "$source/Packages/ModIndex" mod-index-tool keygen "${INDEX_SIGNING_KEY:-$HOME/.config/betterfinder-index/signing.key}"
