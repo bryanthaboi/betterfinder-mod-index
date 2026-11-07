@@ -16,7 +16,7 @@
     },
     {
       "kind" : "fs.write",
-      "reason" : "Copy or move the stack into the folder you pick",
+      "reason" : "Copy or move the stack into the folder you are in, or one you pick",
       "scope" : "destination"
     },
     {
@@ -33,13 +33,13 @@
     }
   ],
   "release" : {
-    "assetURL" : "https://github.com/bryanthaboi/betterfinder-mod-drop-stack/releases/download/v1.0.0/drop-stack.bfmod",
-    "bytes" : 8190,
-    "commit" : "51bd7bd2ef1a5ac2e035efdfdd63c0dce47a4fba",
+    "assetURL" : "https://github.com/bryanthaboi/betterfinder-mod-drop-stack/releases/download/v1.1.0/drop-stack.bfmod",
+    "bytes" : 8477,
+    "commit" : "bc18cb2652df82b53db2323a913c1aba88c42d29",
     "keyId" : "bryanthaboi:2026-11",
-    "sha256" : "1600696e8729e07954fb28cb0fb1b159212b870f4ed9b612eda746f69ef2e84c",
-    "signature" : "shsq6kRGRyZc5eeqPgeNFb5FEvarZtCvYLEEyfrhFRQeUz3QY+Abzpt5z8UjaqCG647Ew4QHaWH739QI4DqNBw==",
-    "tag" : "v1.0.0"
+    "sha256" : "8cebc82d65ea7a50475005cfbb75454854453037e6160a4cd06c09c0dff145e8",
+    "signature" : "QvwylSgJsYyktK6LLPNQzbzk2VD/32bnpM5eDnBOeLExHYhokPkGRkRAlsSQDNLIXb59uzig/fYa1FqkxN+GBA==",
+    "tag" : "v1.1.0"
   },
   "repo" : "https://github.com/bryanthaboi/betterfinder-mod-drop-stack",
   "schemaVersion" : 1,
@@ -50,5 +50,5 @@
     "copy"
   ],
   "title" : "Drop Stack",
-  "version" : "1.0.0"
+  "version" : "1.1.0"
 }

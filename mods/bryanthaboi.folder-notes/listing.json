@@ -22,13 +22,13 @@
     }
   ],
   "release" : {
-    "assetURL" : "https://github.com/bryanthaboi/betterfinder-mod-folder-notes/releases/download/v1.0.0/folder-notes.bfmod",
-    "bytes" : 7978,
-    "commit" : "d03d9df608448e681a7a314f8a3ca45009dedcc5",
+    "assetURL" : "https://github.com/bryanthaboi/betterfinder-mod-folder-notes/releases/download/v1.1.0/folder-notes.bfmod",
+    "bytes" : 7983,
+    "commit" : "924924a5fb5c5fd3bf25561fe708899c33108620",
     "keyId" : "bryanthaboi:2026-11",
-    "sha256" : "d957888679a276b265aa38f87daa16c2725fb334113dc039f9125cc1e4fa80f3",
-    "signature" : "TSRSJT3NmOT4kGS3sQeNaimZtvJhvJ4Cu9JTlNGkHi77vQMvjyq3V5SN7M6QVCGV+QdIa63uDGGdlr1RqhmjBg==",
-    "tag" : "v1.0.0"
+    "sha256" : "b368423b82259e1ba58ae635c6094010db610006568f953856c0a3c33c65619d",
+    "signature" : "DXWzGrzIU/Wh/hd121AjNOLsZTe+mFoI6SNxxpU0mdJRm8R092lSw9kCxdsYd/qdoodygX8tP2q5mtFjkxLHDA==",
+    "tag" : "v1.1.0"
   },
   "repo" : "https://github.com/bryanthaboi/betterfinder-mod-folder-notes",
   "schemaVersion" : 1,
@@ -39,5 +39,5 @@
     "storage"
   ],
   "title" : "Folder Notes",
-  "version" : "1.0.0"
+  "version" : "1.1.0"
 }

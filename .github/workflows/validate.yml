@@ -45,7 +45,7 @@ jobs:
         continue-on-error: true
         run: |
           set -o pipefail
-          betterfinder/Packages/ModIndex/.build/release/mod-index-tool validate-artifacts "$PWD/submission" "$PWD/betterfinder/Packages/ModValidation/.build/release/betterfinder-mod" "$PWD/changed.txt" 2>&1 | tee report.txt
+          betterfinder/Packages/ModIndex/.build/release/mod-index-tool validate-artifacts "$PWD/submission" "$PWD/betterfinder/Packages/ModValidation/.build/release/betterfinder-mod" "$PWD/changed.txt" "$PWD/trusted-index" 2>&1 | tee report.txt
       - uses: actions/github-script@v7
         if: always()
         env:
