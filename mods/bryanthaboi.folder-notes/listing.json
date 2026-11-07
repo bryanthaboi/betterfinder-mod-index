@@ -1,0 +1,43 @@
+{
+  "api" : ">=1.0.0 <2.0.0",
+  "app" : ">=1.0.0 <2.0.0",
+  "author" : "bryanthaboi",
+  "categories" : [
+    "UI",
+    "WORKFLOW"
+  ],
+  "id" : "bryanthaboi.folder-notes",
+  "permissions" : [
+    {
+      "kind" : "storage",
+      "quotaBytes" : 1048576
+    },
+    {
+      "kind" : "ui",
+      "surfaces" : [
+        "panel",
+        "toolbar",
+        "contextMenu"
+      ]
+    }
+  ],
+  "release" : {
+    "assetURL" : "https://github.com/bryanthaboi/betterfinder-mod-folder-notes/releases/download/v1.0.0/folder-notes.bfmod",
+    "bytes" : 7978,
+    "commit" : "d03d9df608448e681a7a314f8a3ca45009dedcc5",
+    "keyId" : "bryanthaboi:2026-11",
+    "sha256" : "d957888679a276b265aa38f87daa16c2725fb334113dc039f9125cc1e4fa80f3",
+    "signature" : "TSRSJT3NmOT4kGS3sQeNaimZtvJhvJ4Cu9JTlNGkHi77vQMvjyq3V5SN7M6QVCGV+QdIa63uDGGdlr1RqhmjBg==",
+    "tag" : "v1.0.0"
+  },
+  "repo" : "https://github.com/bryanthaboi/betterfinder-mod-folder-notes",
+  "schemaVersion" : 1,
+  "summary" : "sticky notes per folder, saved locally and shown in a slide-out panel",
+  "tags" : [
+    "notes",
+    "panel",
+    "storage"
+  ],
+  "title" : "Folder Notes",
+  "version" : "1.0.0"
+}

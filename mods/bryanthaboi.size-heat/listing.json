@@ -1,0 +1,41 @@
+{
+  "api" : ">=1.0.0 <2.0.0",
+  "app" : ">=1.0.0 <2.0.0",
+  "author" : "bryanthaboi",
+  "categories" : [
+    "UI"
+  ],
+  "id" : "bryanthaboi.size-heat",
+  "permissions" : [
+    {
+      "kind" : "ui.selection",
+      "level" : "metadata",
+      "reason" : "Read the size of each visible item to draw its heat bar"
+    },
+    {
+      "kind" : "ui",
+      "surfaces" : [
+        "column"
+      ]
+    }
+  ],
+  "release" : {
+    "assetURL" : "https://github.com/bryanthaboi/betterfinder-mod-size-heat/releases/download/v1.0.0/size-heat.bfmod",
+    "bytes" : 5980,
+    "commit" : "d5d5a6d266489ffdbbb145a729571ba0aaa3ce38",
+    "keyId" : "bryanthaboi:2026-11",
+    "sha256" : "0056da495a831d381cfa35180342ed16780a40396b14919fc991d1101e45caa3",
+    "signature" : "p89djQTgFobqbaCcEYNFeValhTd9kbQo3BcH2bI2pWfAs3GpTOCWRItMtT7FRPs8TZbnP2pTqOMdovPC/X07Bw==",
+    "tag" : "v1.0.0"
+  },
+  "repo" : "https://github.com/bryanthaboi/betterfinder-mod-size-heat",
+  "schemaVersion" : 1,
+  "summary" : "heat column with a little text bar for how big each item is next to its siblings",
+  "tags" : [
+    "size",
+    "column",
+    "bfscript"
+  ],
+  "title" : "Size Heat",
+  "version" : "1.0.0"
+}
