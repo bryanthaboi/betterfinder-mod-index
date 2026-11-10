@@ -1,0 +1,55 @@
+{
+  "api" : ">=1.0.0 <2.0.0",
+  "app" : ">=1.0.0 <2.0.0",
+  "author" : "bryanthaboi",
+  "categories" : [
+    "UI",
+    "WORKFLOW"
+  ],
+  "id" : "bryanthaboi.git-panel",
+  "permissions" : [
+    {
+      "kind" : "ui",
+      "surfaces" : [
+        "panel",
+        "contextMenu",
+        "statusBar"
+      ]
+    },
+    {
+      "kind" : "fs.read",
+      "reason" : "Read .git in the folder you are viewing to show branch and remote info",
+      "recursive" : true,
+      "scope" : "selection"
+    },
+    {
+      "kind" : "ui.selection",
+      "level" : "paths",
+      "reason" : "Know which repository and items git commands apply to"
+    },
+    {
+      "kind" : "process.exec",
+      "mode" : "unrestricted",
+      "reason" : "Run git to switch branches, show status, and append ignore rules; each run asks first"
+    }
+  ],
+  "release" : {
+    "assetURL" : "https://github.com/bryanthaboi/betterfinder-mod-git-panel/releases/download/v1.0.0/git-panel.bfmod",
+    "bytes" : 24372,
+    "commit" : "aef9175c241e9f05a762c849fd1703a7a7a6ac21",
+    "keyId" : "bryanthaboi:2026-11",
+    "sha256" : "f0b8d757db26dee7920b7f1d3c77758faef91a5b17d7feffcd73af24ff088e0e",
+    "signature" : "f/RxvuXWc3f4dblt6n1k+n8eVwVEmdENDkTDaLQQaZ3pxgOAtXqGxyseYgrqzPpevpMoc7/tbFxYtKzplKu7Bg==",
+    "tag" : "v1.0.0"
+  },
+  "repo" : "https://github.com/bryanthaboi/betterfinder-mod-git-panel",
+  "schemaVersion" : 1,
+  "summary" : "git branch in the status bar, a side panel w a branch switcher and status, right click to ignore",
+  "tags" : [
+    "git",
+    "panel",
+    "branches"
+  ],
+  "title" : "Git Panel",
+  "version" : "1.0.0"
+}
