@@ -10,7 +10,7 @@
     {
       "kind" : "ui.selection",
       "level" : "metadata",
-      "reason" : "Read the size of each visible item to draw its heat bar"
+      "reason" : "Read the size of each visible item, and a folder's measured total, to draw its heat bar"
     },
     {
       "kind" : "ui",
@@ -20,22 +20,22 @@
     }
   ],
   "release" : {
-    "assetURL" : "https://github.com/bryanthaboi/betterfinder-mod-size-heat/releases/download/v1.0.0/size-heat.bfmod",
-    "bytes" : 5980,
-    "commit" : "d5d5a6d266489ffdbbb145a729571ba0aaa3ce38",
+    "assetURL" : "https://github.com/bryanthaboi/betterfinder-mod-size-heat/releases/download/v1.1.0/size-heat.bfmod",
+    "bytes" : 7236,
+    "commit" : "754844a73c4fd3f830e3abc0aefd369a166c3a2d",
     "keyId" : "bryanthaboi:2026-11",
-    "sha256" : "0056da495a831d381cfa35180342ed16780a40396b14919fc991d1101e45caa3",
-    "signature" : "p89djQTgFobqbaCcEYNFeValhTd9kbQo3BcH2bI2pWfAs3GpTOCWRItMtT7FRPs8TZbnP2pTqOMdovPC/X07Bw==",
-    "tag" : "v1.0.0"
+    "sha256" : "2df38f99083adbca65d1cfc6e939c06a2528958c38267731abf7742ae9526026",
+    "signature" : "zdMEum48NZ0dqjjSV0Ndfx796Zz6my2OlRfUkWe7de5OIdIjXSt86nu6fw+VKH8oPtp8/6utOUc5I3dcbCI2Dg==",
+    "tag" : "v1.1.0"
   },
   "repo" : "https://github.com/bryanthaboi/betterfinder-mod-size-heat",
   "schemaVersion" : 1,
-  "summary" : "heat column with a little text bar for how big each item is next to its siblings",
+  "summary" : "heat column w a little bar for how heavy each file or folder is, on a fixed scale",
   "tags" : [
     "size",
     "column",
-    "bfscript"
+    "folders"
   ],
   "title" : "Size Heat",
-  "version" : "1.0.0"
+  "version" : "1.1.0"
 }
