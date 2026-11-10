@@ -34,27 +34,28 @@
       "kind" : "ui",
       "surfaces" : [
         "panel",
-        "toolbar"
+        "toolbar",
+        "statusBar"
       ]
     }
   ],
   "release" : {
-    "assetURL" : "https://github.com/bryanthaboi/betterfinder-mod-weather-panel/releases/download/v1.0.0/weather-panel.bfmod",
-    "bytes" : 9190,
-    "commit" : "2e35d490a568515fe611b28b6a9c8799407f8574",
+    "assetURL" : "https://github.com/bryanthaboi/betterfinder-mod-weather-panel/releases/download/v1.1.0/weather-panel.bfmod",
+    "bytes" : 15362,
+    "commit" : "fb4b105efd4d57c1ea055e98ae568d47f393c0ec",
     "keyId" : "bryanthaboi:2026-11",
-    "sha256" : "c2a99dbad8720899481d274b7623ddc0be82392f9cbc7c16198b1d5503c3cddb",
-    "signature" : "bNcnW+Y8ydAydUpTgt0rque+8nzEspzp9fNib63ThdbP7br+pJxK1jOT7biU53E9p0/OnvxI/T3wOTEhntllAA==",
-    "tag" : "v1.0.0"
+    "sha256" : "bff82b347ea9a7dbd2458ce2e839b53d54c5d55929dd2aa988ad69fd5f05d63b",
+    "signature" : "QPd9s1D1D8iL2hTOnDz+w1gDCo2xd+KRhjoT46PlvL3N+8Mpa3RdA6weAMZBPbb+h5GyO/3zJtWZ4zzgkyHoBg==",
+    "tag" : "v1.1.0"
   },
   "repo" : "https://github.com/bryanthaboi/betterfinder-mod-weather-panel",
   "schemaVersion" : 1,
-  "summary" : "slide-out panel with the current weather and a 3 day forecast for the city u pick",
+  "summary" : "slide-out weather panel w a 5 day forecast, plus the current temp in ur status bar",
   "tags" : [
     "weather",
     "panel",
     "silly"
   ],
   "title" : "Weather Panel",
-  "version" : "1.0.0"
+  "version" : "1.1.0"
 }
